@@ -1,63 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AnimalVest Ghana</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial; margin:0; background:#f4f4f4; }
+  <title>AnimalVest Ghana</title>
 
-    /* NAVBAR */
-    .nav {
-      background:#2e7d32;
-      padding:15px;
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f5f7f6;
+      color:#222;
+    }
+
+    /* NAV */
+    .nav{
+      background:#1b5e20;
       color:white;
       display:flex;
       justify-content:space-between;
+      padding:15px 20px;
       align-items:center;
     }
 
-    .nav a {
+    .nav a{
       color:white;
-      margin-left:10px;
+      margin-left:15px;
       text-decoration:none;
     }
 
     /* HERO */
-    .hero {
-      background:#388e3c;
-      color:white;
+    .hero{
       text-align:center;
-      padding:50px 20px;
+      padding:60px 20px;
+      background:linear-gradient(135deg,#2e7d32,#43a047);
+      color:white;
     }
 
-    .hero button {
-      padding:10px 20px;
+    .hero button{
+      margin-top:15px;
+      padding:12px 20px;
       border:none;
+      border-radius:5px;
       background:white;
       color:#2e7d32;
       font-weight:bold;
-      border-radius:5px;
-      margin-top:10px;
+      cursor:pointer;
+    }
+
+    /* SECTION TITLE */
+    .title{
+      text-align:center;
+      margin:30px 0 10px;
+      font-size:22px;
+      font-weight:bold;
     }
 
     /* CARDS */
-    .container {
+    .container{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-      gap:10px;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
       padding:20px;
     }
 
-    .card {
+    .card{
       background:white;
-      padding:15px;
+      padding:20px;
       border-radius:10px;
       text-align:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .price{
+      color:#2e7d32;
+      font-weight:bold;
     }
 
     /* FOOTER */
-    .footer {
-      background:#2e7d32;
+    .footer{
+      background:#1b5e20;
       color:white;
       text-align:center;
       padding:15px;
@@ -68,48 +90,54 @@
 
 <body>
 
-<div class="nav">
-  <div><b>AnimalVest</b></div>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Login</a>
-    <a href="#">Sign Up</a>
-  </div>
-</div>
-
-<div class="hero">
-  <h1>Invest in Livestock. Grow Your Wealth.</h1>
-  <p>Start building income with animal investments in Ghana</p>
-  <button>Start Investing</button>
-</div>
-
-<div class="container">
-
-  <div class="card">
-    <h3>🐄 Cattle</h3>
-    <p>GH₵1,000+</p>
+  <!-- NAV -->
+  <div class="nav">
+    <div><b>AnimalVest</b></div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Login</a>
+      <a href="#">Signup</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>🐐 Goats</h3>
-    <p>GH₵500+</p>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Invest in Livestock. Grow Your Wealth.</h1>
+    <p>Start building income with animal investments in Ghana</p>
+    <button>Start Investing</button>
   </div>
 
-  <div class="card">
-    <h3>🐓 Poultry</h3>
-    <p>GH₵200+</p>
+  <!-- INVESTMENTS -->
+  <div class="title">Investment Plans</div>
+
+  <div class="container">
+
+    <div class="card">
+      <h3>🐄 Cattle</h3>
+      <p class="price">GHC 1,000+</p>
+    </div>
+
+    <div class="card">
+      <h3>🐐 Goats</h3>
+      <p class="price">GHC 500+</p>
+    </div>
+
+    <div class="card">
+      <h3>🐓 Poultry</h3>
+      <p class="price">GHC 200+</p>
+    </div>
+
+    <div class="card">
+      <h3>🐖 Pigs</h3>
+      <p class="price">GHC 800+</p>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h3>🐖 Pigs</h3>
-    <p>GH₵800+</p>
+  <!-- FOOTER -->
+  <div class="footer">
+    © 2026 AnimalVest Ghana. All rights reserved.
   </div>
-
-</div>
-
-<div class="footer">
-  <p>© 2026 AnimalVest Ghana. All rights reserved.</p>
-</div>
 
 </body>
 </html>
