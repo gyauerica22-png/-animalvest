@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,23 +11,18 @@
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       color: #333;
+      text-align: center;
     }
 
     header {
       background: #1b5e20;
       color: white;
       padding: 20px;
-      text-align: center;
     }
 
     .hero {
-      text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       background: white;
-    }
-
-    .hero h1 {
-      margin-bottom: 10px;
     }
 
     .btn {
@@ -42,7 +37,6 @@
 
     .section {
       padding: 40px 20px;
-      text-align: center;
     }
 
     .grid {
@@ -74,9 +68,19 @@
     footer {
       background: #1b5e20;
       color: white;
-      text-align: center;
       padding: 15px;
       margin-top: 40px;
+    }
+
+    /* SUCCESS PAGE */
+    .success {
+      display: none;
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .success h1 {
+      color: #2e7d32;
     }
   </style>
 </head>
@@ -88,103 +92,67 @@
   <p>Invest in Livestock. Grow Your Future.</p>
 </header>
 
-<div class="hero">
-  <h1>Start Investing Today</h1>
-  <p>Simple and secure livestock investment platform.</p>
-  <a class="btn" href="#invest">Get Started</a>
-</div>
+<!-- HOME PAGE -->
+<div id="home">
 
-<div class="section" id="invest">
-  <h2>Investment Packages</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>🐄 Cow Package</h3>
-      <p>GH₵ 2,000</p>
-      <p>20% Return</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>🐐 Goat Package</h3>
-      <p>GH₵ 800</p>
-      <p>15% Return</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>🐓 Chicken Package</h3>
-      <p>GH₵ 200</p>
-      <p>10% Return</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
+  <div class="hero">
+    <h1>Start Investing Today</h1>
+    <p>Simple and secure livestock investment platform.</p>
+    <a class="btn" href="#invest">Get Started</a>
   </div>
-</div>
 
-<footer>
-  <p>© 2026 AnimalVest Ghana. All rights reserved.</p>
-</footer>
+  <div class="section" id="invest">
+    <h2>Investment Packages</h2>
 
-</body>
-</html>
-<div class="hero" id="home">
-  <h1>Start Investing in Livestock Today</h1>
-  <p>Simple, fast and profitable investment platform in Ghana.</p>
-  <a class="btn" href="#invest">Get Started</a>
-</div>
+    <div class="grid">
 
-<div class="section" id="how">
-  <h2>How It Works</h2>
+      <div class="card">
+        <h3>🐄 Cow Package</h3>
+        <p>GH₵ 2,000</p>
+        <p>20% Return</p>
+        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
+          Pay Now
+        </a>
+      </div>
 
-  <div class="features">
-    <div class="feature">1. Choose an animal package</div>
-    <div class="feature">2. Make payment securely</div>
-    <div class="feature">3. Receive returns over time</div>
+      <div class="card">
+        <h3>🐐 Goat Package</h3>
+        <p>GH₵ 800</p>
+        <p>15% Return</p>
+        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
+          Pay Now
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>🐓 Chicken Package</h3>
+        <p>GH₵ 200</p>
+        <p>10% Return</p>
+        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
+          Pay Now
+        </a>
+      </div>
+
+    </div>
   </div>
+
 </div>
 
-<div class="section" id="invest">
-  <h2>Investment Packages</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>🐄 Cow Package</h3>
-      <div class="price">GH₵ 2,000</div>
-      <p>High return livestock investment</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>🐐 Goat Package</h3>
-      <div class="price">GH₵ 800</div>
-      <p>Medium risk, steady return</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>🐓 Chicken Package</h3>
-      <div class="price">GH₵ 200</div>
-      <p>Low entry investment option</p>
-      <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">
-        Pay Now
-      </a>
-    </div>
-
-  </div>
+<!-- SUCCESS PAGE -->
+<div id="success" class="success">
+  <h1>🎉 Payment Successful</h1>
+  <p>Thank you for investing in AnimalVest Ghana.</p>
+  <p>Your investment has been received successfully.</p>
+  <a class="btn" href="/">Go Back Home</a>
 </div>
+
+<script>
+  // Simple success page trigger
+  if (window.location.hash === "#success") {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("success").style.display = "block";
+  }
+</script>
 
 <footer>
   <p>© 2026 AnimalVest Ghana. All rights reserved.</p>
