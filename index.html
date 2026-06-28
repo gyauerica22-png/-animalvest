@@ -3,20 +3,113 @@
 <head>
   <title>AnimalVest Ghana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; margin:0; background:#f4f4f4; }
+
+    /* NAVBAR */
+    .nav {
+      background:#2e7d32;
+      padding:15px;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .nav a {
+      color:white;
+      margin-left:10px;
+      text-decoration:none;
+    }
+
+    /* HERO */
+    .hero {
+      background:#388e3c;
+      color:white;
+      text-align:center;
+      padding:50px 20px;
+    }
+
+    .hero button {
+      padding:10px 20px;
+      border:none;
+      background:white;
+      color:#2e7d32;
+      font-weight:bold;
+      border-radius:5px;
+      margin-top:10px;
+    }
+
+    /* CARDS */
+    .container {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:10px;
+      padding:20px;
+    }
+
+    .card {
+      background:white;
+      padding:15px;
+      border-radius:10px;
+      text-align:center;
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#2e7d32;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>AnimalVest Ghana</h1>
-  <p>Invest in livestock, build wealth.</p>
+<div class="nav">
+  <div><b>AnimalVest</b></div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Login</a>
+    <a href="#">Sign Up</a>
+  </div>
+</div>
 
-  <h2>🐄 Cattle Investment</h2>
-  <p>Minimum: GH₵1,000</p>
+<div class="hero">
+  <h1>Invest in Livestock. Grow Your Wealth.</h1>
+  <p>Start building income with animal investments in Ghana</p>
+  <button>Start Investing</button>
+</div>
 
-  <h2>🐐 Goat Investment</h2>
-  <p>Minimum: GH₵500</p>
+<div class="container">
 
-  <h2>🐓 Poultry Investment</h2>
-  <p>Minimum: GH₵200</p>
+  <div class="card">
+    <h3>🐄 Cattle</h3>
+    <p>GH₵1,000+</p>
+  </div>
+
+  <div class="card">
+    <h3>🐐 Goats</h3>
+    <p>GH₵500+</p>
+  </div>
+
+  <div class="card">
+    <h3>🐓 Poultry</h3>
+    <p>GH₵200+</p>
+  </div>
+
+  <div class="card">
+    <h3>🐖 Pigs</h3>
+    <p>GH₵800+</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>© 2026 AnimalVest Ghana. All rights reserved.</p>
+</div>
 
 </body>
 </html>
