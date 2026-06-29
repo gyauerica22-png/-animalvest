@@ -1,233 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnimalVest Ghana</title>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6f4;
-      color: #222;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #1b5e20, #2e7d32);
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    nav {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #1b5e20;
-      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #000;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav a {
-      color: white;
+      color: #ccc;
       text-decoration: none;
-      font-weight: bold;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
     }
 
     .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 70px 20px;
-      background: white;
+      padding: 0 20px;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
     }
 
     .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      font-size: 48px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      color: #555;
       font-size: 18px;
+      color: #bbb;
+      max-width: 600px;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #2e7d32;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
     }
 
     .section {
-      padding: 50px 20px;
-      text-align: center;
+      padding: 80px 60px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: white;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
+      background: #151515;
+      padding: 20px;
+      border: 1px solid #222;
+      border-radius: 10px;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-    }
-
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 10px 0;
-      color: #1b5e20;
-    }
-
-    .pay-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 18px;
-      background: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .trust {
-      background: white;
-      padding: 40px 20px;
-      margin-top: 20px;
-    }
-
-    .trust-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .trust-item {
-      background: #f7f7f7;
-      padding: 15px;
-      border-radius: 10px;
-      width: 220px;
+      border-color: #fff;
     }
 
     footer {
-      background: #1b5e20;
-      color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #888;
     }
 
-    .success {
-      display: none;
-      padding: 100px 20px;
-      text-align: center;
-      background: white;
-    }
+    @media(max-width: 768px) {
+      header {
+        padding: 20px;
+        flex-direction: column;
+      }
 
-    .success h1 {
-      color: #2e7d32;
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 50px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>AnimalVest Ghana</h1>
-  <p>Smart Livestock Investment Platform</p>
-</header>
+  <header>
+    <div class="logo">AnimalVest Ghana</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="#invest">Invest</a>
-  <a href="#trust">Why Us</a>
-</nav>
+  <section class="hero">
+    <h1>Invest in Livestock. Build Wealth.</h1>
+    <p>A modern platform connecting investors to profitable animal farming opportunities in Ghana.</p>
+    <button class="btn">Get Started</button>
+  </section>
 
-<div id="home">
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p style="color:#bbb; max-width:700px;">
+      AnimalVest Ghana is a digital livestock investment platform helping individuals and businesses invest in poultry,
+      cattle, and goat farming with transparency and real returns.
+    </p>
+  </section>
 
-  <div class="hero">
-    <h1>Grow Your Wealth Through Livestock</h1>
-    <p>Simple, transparent and secure investment opportunities in Ghana.</p>
-    <a class="btn" href="#invest">Start Investing</a>
-  </div>
-
-  <div class="section" id="invest">
-    <h2>Investment Packages</h2>
-
+  <section class="section" id="services">
+    <h2>Our Services</h2>
     <div class="grid">
-
       <div class="card">
-        <h3>🐄 Cow Package</h3>
-        <div class="price">GH₵ 2,000</div>
-        <p>High return livestock investment</p>
-        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">Pay Now</a>
+        <h3>Poultry Investment</h3>
+        <p>High-demand chicken farming projects with fast returns.</p>
       </div>
-
       <div class="card">
-        <h3>🐐 Goat Package</h3>
-        <div class="price">GH₵ 800</div>
-        <p>Balanced risk & reward</p>
-        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">Pay Now</a>
+        <h3>Cattle Farming</h3>
+        <p>Long-term livestock growth with stable profit cycles.</p>
       </div>
-
       <div class="card">
-        <h3>🐓 Chicken Package</h3>
-        <div class="price">GH₵ 200</div>
-        <p>Low entry investment</p>
-        <a class="pay-btn" href="https://paystack.shop/pay/1yrz9rcd96" target="_blank">Pay Now</a>
+        <h3>Goat Rearing</h3>
+        <p>Low-risk, high-demand local meat production investment.</p>
       </div>
-
     </div>
-  </div>
+  </section>
 
-  <div class="trust" id="trust">
-    <h2>Why Investors Trust Us</h2>
-    <div class="trust-box">
-      <div class="trust-item">✔ Secure Payments</div>
-      <div class="trust-item">✔ Transparent Returns</div>
-      <div class="trust-item">✔ Fast Processing</div>
-      <div class="trust-item">✔ Ghana-Based Platform</div>
-    </div>
-  </div>
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p style="color:#bbb;">Email: support@animalvestghana.com</p>
+  </section>
 
-</div>
-
-<!-- SUCCESS PAGE -->
-<div id="success" class="success">
-  <h1>🎉 Payment Successful</h1>
-  <p>Thank you for investing in AnimalVest Ghana.</p>
-  <a class="btn" href="/">Return Home</a>
-</div>
-
-<script>
-  if (window.location.hash === "#success") {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("success").style.display = "block";
-  }
-</script>
-
-<footer>
-  <p>© 2026 AnimalVest Ghana. All rights reserved.</p>
-</footer>
+  <footer>
+    © 2026 AnimalVest Ghana. All rights reserved.
+  </footer>
 
 </body>
 </html>
