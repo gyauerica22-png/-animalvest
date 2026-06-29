@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - AnimalVest Ghana</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f0f0f;
+      color: #fff;
+      padding: 40px;
+    }
+
+    .card {
+      background: #151515;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      max-width: 600px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Welcome 👋</h1>
+    <p id="user">Loading user...</p>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const supabaseUrl = "https://zjtspzuzbfetcvaqnbsy.supabase.co";
+    const supabaseKey = "sb_publishable_6IyOUPm45UCexT4iaX5_6A_J7yDF4gO";
+
+    const client = supabase.createClient(supabaseUrl, supabaseKey);
+
+    async function loadUser() {
+      const { data: { user } } = await client.auth.getUser();
+
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("user").innerText = "Logged in as: " + user.email;
+      }
+    }
+
+    async function logout() {
+      await client.auth.signOut();
+      window.location.href = "login.html";
+    }
+
+    loadUser();
+  </script>
+
+</body>
+</html>
