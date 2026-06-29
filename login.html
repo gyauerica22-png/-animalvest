@@ -25,7 +25,6 @@
       padding: 30px;
       border-radius: 10px;
       width: 320px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     h2 {
@@ -39,19 +38,17 @@
       margin: 10px 0;
       border: none;
       border-radius: 5px;
-      outline: none;
     }
 
     button {
       width: 100%;
       padding: 10px;
-      background: #fff;
-      color: #000;
+      background: white;
+      color: black;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      margin-top: 10px;
     }
 
     button:hover {
@@ -72,8 +69,8 @@
   <div class="container">
     <h2>Login</h2>
 
-    <input id="email" type="email" placeholder="Email" required />
-    <input id="password" type="password" placeholder="Password" required />
+    <input id="email" type="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
 
     <button onclick="login()">Login</button>
 
@@ -81,11 +78,11 @@
   </div>
 
   <script>
-    // 🔥 YOUR SUPABASE SETUP (REPLACE KEY ONLY)
+    // ✅ YOUR SUPABASE CONFIG (READY TO USE)
     const supabaseUrl = "https://zjtspzuzbfetcvaqnbsy.supabase.co";
-    const supabaseKey = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+    const supabaseKey = "sb_publish_6IyOUPm45UCexT4iaX5_6A_J7yDF4gO";
 
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
     async function login() {
       const email = document.getElementById("email").value;
@@ -94,7 +91,7 @@
 
       msg.textContent = "Logging in...";
 
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
         email,
         password
       });
@@ -102,7 +99,7 @@
       if (error) {
         msg.textContent = "❌ " + error.message;
       } else {
-        msg.textContent = "✅ Login successful! Redirecting...";
+        msg.textContent = "✅ Login successful!";
         setTimeout(() => {
           window.location.href = "index.html";
         }, 1000);
