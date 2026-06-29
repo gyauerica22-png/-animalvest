@@ -1,111 +1,181 @@
-<!DOCTYPE html>
+DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Login - AnimalVest Ghana</title>
 
-  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
   <style>
+
     body {
+
       margin: 0;
+
       font-family: Arial, sans-serif;
+
       background: #0f0f0f;
+
       color: #fff;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       height: 100vh;
+
     }
 
     .container {
+
       background: #151515;
+
       padding: 30px;
+
       border-radius: 10px;
+
       width: 320px;
+
     }
 
     h2 {
+
       text-align: center;
+
       margin-bottom: 20px;
+
     }
 
     input {
+
       width: 100%;
+
       padding: 10px;
+
       margin: 10px 0;
+
       border: none;
+
       border-radius: 5px;
+
     }
 
     button {
+
       width: 100%;
+
       padding: 10px;
+
       background: white;
+
       color: black;
+
       border: none;
+
       border-radius: 5px;
+
       cursor: pointer;
+
       font-weight: bold;
+
     }
 
     button:hover {
+
       background: #ccc;
+
     }
 
     .msg {
+
       text-align: center;
+
       margin-top: 10px;
+
       font-size: 14px;
+
       color: #aaa;
+
     }
+
   </style>
+
 </head>
 
 <body>
 
   <div class="container">
+
     <h2>Login</h2>
 
     <input id="email" type="email" placeholder="Email" />
+
     <input id="password" type="password" placeholder="Password" />
 
     <button onclick="login()">Login</button>
 
     <div class="msg" id="msg"></div>
+
   </div>
 
   <script>
-    // ✅ YOUR SUPABASE CONFIG (READY TO USE)
+
+    // ✅ FIXED SUPABASE CONFIG
+
     const supabaseUrl = "https://zjtspzuzbfetcvaqnbsy.supabase.co";
-    const supabaseKey = "sb_publish_6IyOUPm45UCexT4iaX5_6A_J7yDF4gO";
+
+    // ⚠️ YOU MUST REPLACE THIS WITH YOUR REAL KEY FROM SUPABASE DASHBOARD
+
+    const supabaseKey = "PASTE_YOUR_REAL_ANON_KEY_HERE";
 
     const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
     async function login() {
+
       const email = document.getElementById("email").value;
+
       const password = document.getElementById("password").value;
+
       const msg = document.getElementById("msg");
 
       msg.textContent = "Logging in...";
 
       const { data, error } = await supabaseClient.auth.signInWithPassword({
+
         email,
+
         password
+
       });
 
       if (error) {
+
         msg.textContent = "❌ " + error.message;
+
       } else {
+
         msg.textContent = "✅ Login successful!";
+
         setTimeout(() => {
+
           window.location.href = "index.html";
+
         }, 1000);
+
       }
+
     }
+
   </script>
 
 </body>
+
 </html>
