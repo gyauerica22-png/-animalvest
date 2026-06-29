@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - AnimalVest Ghana</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #0f0f0f;
       color: #fff;
       display: flex;
@@ -19,69 +20,92 @@
       height: 100vh;
     }
 
-    .box {
-      width: 320px;
-      padding: 30px;
+    .container {
       background: #151515;
+      padding: 30px;
       border-radius: 10px;
-      border: 1px solid #222;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     input {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       margin: 10px 0;
-      background: #000;
-      border: 1px solid #333;
-      color: #fff;
+      border: none;
+      border-radius: 5px;
+      outline: none;
     }
 
     button {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       background: #fff;
       color: #000;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     button:hover {
-      background: #ddd;
+      background: #ccc;
+    }
+
+    .msg {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
+  <div class="container">
     <h2>Login</h2>
 
-    <input id="email" type="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Password">
+    <input id="email" type="email" placeholder="Email" required />
+    <input id="password" type="password" placeholder="Password" required />
 
     <button onclick="login()">Login</button>
+
+    <div class="msg" id="msg"></div>
   </div>
 
   <script>
+    // 🔥 YOUR SUPABASE SETUP (REPLACE KEY ONLY)
     const supabaseUrl = "https://zjtspzuzbfetcvaqnbsy.supabase.co";
-    const supabaseKey = "sb_publishable_6IyOUPm45UCexT4iaX5_6A_J7yDF4gO";
+    const supabaseKey = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 
-    const client = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
     async function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      const msg = document.getElementById("msg");
 
-      const { data, error } = await client.auth.signInWithPassword({
+      msg.textContent = "Logging in...";
+
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
 
       if (error) {
-        alert(error.message);
+        msg.textContent = "❌ " + error.message;
       } else {
-        alert("Login successful!");
-        window.location.href = "dashboard.html";
+        msg.textContent = "✅ Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
       }
     }
   </script>
